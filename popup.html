@@ -17,51 +17,183 @@
             </div>
         </header>
 
-        <div class="status-section">
-            <div class="status-indicator" id="statusIndicator">
-                <div class="status-dot" id="statusDot"></div>
-                <span id="statusText">Ready</span>
-            </div>
-        </div>
-
-        <div class="controls-section">
-            <div class="feature-card">
-                <h3>Auto Like Notifications</h3>
-                <p class="feature-description">Automatically like replies in your notifications</p>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="autoLikeToggle">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="toggle-label">Enable Auto Like</span>
+        <!-- Configuration Mode (shown when not active) -->
+        <div id="configMode" class="config-mode">
+            <div class="status-section">
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span id="statusText">Ready</span>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <h3>Auto Scroll Through Notifications</h3>
-                <p class="feature-description">Scroll down through existing notifications to find content</p>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="autoScrollToggle">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="toggle-label">Enable Auto Scroll</span>
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="notifications">📔 Notifications</button>
+                <button class="tab-button" data-tab="home">🏠 Home Feed</button>
+                <button class="tab-button" data-tab="single-post">💬 Single Post</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Notifications Tab -->
+                <div class="tab-panel active" id="notifications-panel">
+                    <div class="page-navigation">
+                        <button class="nav-btn" id="goToNotifications">📔 Go to Notifications</button>
+                    </div>
+                    
+                    <div class="controls-section">
+                        <div class="feature-card">
+                            <h3>Auto Like Notifications</h3>
+                            <p class="feature-description">Automatically like replies in your notifications</p>
+                            <div class="toggle-container">
+                                <label class="toggle">
+                                    <input type="checkbox" id="notifAutoLikeToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-label">Enable Auto Like</span>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Scroll Mode</h3>
+                            <p class="feature-description">Choose how to find content in notifications</p>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="scrollMode" value="none" checked>
+                                    <span class="radio-label">Manual Only</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="scrollMode" value="scroll">
+                                    <span class="radio-label">Scroll Through Existing</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="scrollMode" value="wait">
+                                    <span class="radio-label">Wait for New</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Feed Tab -->
+                <div class="tab-panel" id="home-panel">
+                    <div class="page-navigation">
+                        <button class="nav-btn" id="goToHome">🏠 Go to Home Feed</button>
+                    </div>
+                    
+                    <div class="controls-section">
+                        <div class="feature-card">
+                            <h3>Auto Actions</h3>
+                            <p class="feature-description">Choose which actions to perform automatically</p>
+                            <div class="action-toggles">
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="homeAutoLikeToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Like Posts</span>
+                                </div>
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="homeAutoRetweetToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Retweet Posts</span>
+                                </div>
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="homeAutoBookmarkToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Bookmark Posts</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Auto Scroll Timeline</h3>
+                            <p class="feature-description">Continuously scroll through home feed</p>
+                            <div class="toggle-container">
+                                <label class="toggle">
+                                    <input type="checkbox" id="homeAutoScrollToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-label">Enable Auto Scroll</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Post Tab -->
+                <div class="tab-panel" id="single-post-panel">
+                    <div class="page-detection">
+                        <div class="detection-status" id="postDetectionStatus">
+                            <span class="detection-icon">🔍</span>
+                            <span id="postDetectionText">Navigate to a single post to enable automation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="controls-section">
+                        <div class="feature-card">
+                            <h3>Post Actions</h3>
+                            <p class="feature-description">Choose what to do with the post and comments</p>
+                            <div class="action-toggles">
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="postLikeOriginalToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Like Original Post</span>
+                                </div>
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="postAutoLikeToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Like Comments</span>
+                                </div>
+                                <div class="toggle-container">
+                                    <label class="toggle">
+                                        <input type="checkbox" id="postAutoReplyToggle">
+                                        <span class="slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Open Reply Dialogs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Auto Scroll Comments</h3>
+                            <p class="feature-description">Scroll through all comments in the thread</p>
+                            <div class="toggle-container">
+                                <label class="toggle">
+                                    <input type="checkbox" id="postAutoScrollToggle">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="toggle-label">Enable Auto Scroll</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="feature-card">
-                <h3>Wait for New Notifications</h3>
-                <p class="feature-description">Stay at top and automatically like new incoming replies</p>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="waitForNewToggle">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="toggle-label">Enable Wait Mode</span>
+            <!-- Compact Settings -->
+            <div class="compact-settings">
+                <div class="settings-summary">
+                    <span class="settings-label">⏱️ Delays:</span>
+                    <span class="settings-values" id="delayDisplay">2-10s</span>
+                    <button class="settings-edit-btn" id="editSettingsBtn">⚙️</button>
+                </div>
+                
+                <div class="settings-summary">
+                    <span class="settings-label">⏰ Duration:</span>
+                    <span class="settings-values" id="durationDisplay">30 min</span>
+                    <button class="settings-edit-btn" id="editDurationBtn">⚙️</button>
                 </div>
             </div>
 
-            <div class="settings-card">
+            <!-- Expandable Settings Panel -->
+            <div class="settings-panel" id="settingsPanel" style="display: none;">
                 <h3>Delay Settings</h3>
                 <div class="delay-inputs">
                     <div class="input-group">
@@ -73,33 +205,88 @@
                         <input type="number" id="maxDelay" min="1" max="60" value="10">
                     </div>
                 </div>
-            </div>
-
-            <div class="stats-card">
-                <h3>Statistics</h3>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number" id="totalLikes">0</span>
-                        <span class="stat-label">Total Likes</span>
+                <div class="delay-inputs">
+                    <div class="input-group">
+                        <label for="scrollDelay">Scroll Delay (seconds)</label>
+                        <input type="number" id="scrollDelay" min="1" max="30" value="3">
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" id="sessionLikes">0</span>
-                        <span class="stat-label">Session Likes</span>
+                    <div class="input-group">
+                        <label for="actionDelay">Action Delay (ms)</label>
+                        <input type="number" id="actionDelay" min="100" max="2000" value="500">
                     </div>
                 </div>
+                <button class="settings-close-btn" id="closeSettingsBtn">Done</button>
+            </div>
+
+            <!-- Duration Settings Panel -->
+            <div class="duration-panel" id="durationPanel" style="display: none;">
+                <h3>Automation Duration</h3>
+                <div class="duration-input">
+                    <label for="automationDuration">Run for (minutes)</label>
+                    <input type="number" id="automationDuration" min="1" max="480" value="30">
+                    <small>Maximum: 8 hours (480 minutes)</small>
+                </div>
+                <button class="settings-close-btn" id="closeDurationBtn">Done</button>
+            </div>
+
+            <!-- Compact Stats -->
+            <div class="compact-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalActions">0</span>
+                    <span class="stat-label">Total Actions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="sessionActions">0</span>
+                    <span class="stat-label">This Session</span>
+                </div>
+                <button class="reset-stats-btn" id="resetStatsBtn" title="Reset Statistics">🔄</button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="startBtn">▶️ Start Automation</button>
             </div>
         </div>
 
-        <div class="action-buttons">
-            <button class="btn btn-primary" id="startBtn">Start Auto Liking</button>
-            <button class="btn btn-secondary" id="stopBtn" disabled>Stop</button>
-            <button class="btn btn-tertiary" id="resetStatsBtn">Reset Stats</button>
-        </div>
+        <!-- Active Mode (shown during automation) -->
+        <div id="activeMode" class="active-mode" style="display: none;">
+            <div class="active-header">
+                <div class="active-status">
+                    <div class="active-indicator">
+                        <div class="active-dot"></div>
+                        <span id="activeStatusText">Automation Active</span>
+                    </div>
+                    <div class="time-remaining" id="timeRemaining">30:00</div>
+                </div>
+            </div>
 
-        <div class="logs-section">
-            <h3>Activity Log</h3>
-            <div class="logs-container" id="logsContainer">
-                <div class="log-item info">Extension loaded successfully</div>
+            <!-- Active Stats -->
+            <div class="active-stats">
+                <div class="active-stat">
+                    <span class="active-stat-number" id="activeTotalActions">0</span>
+                    <span class="active-stat-label">Total Actions</span>
+                </div>
+                <div class="active-stat">
+                    <span class="active-stat-number" id="activeSessionActions">0</span>
+                    <span class="active-stat-label">This Session</span>
+                </div>
+                <div class="active-stat">
+                    <span class="active-stat-number" id="actionsPerMinute">0</span>
+                    <span class="active-stat-label">Actions/Min</span>
+                </div>
+            </div>
+
+            <!-- Stop Button -->
+            <div class="active-controls">
+                <button class="btn btn-stop" id="stopBtn">⏹️ Stop Automation</button>
+            </div>
+
+            <!-- Expanded Activity Log -->
+            <div class="active-logs">
+                <h3>Live Activity Feed</h3>
+                <div class="active-logs-container" id="activeLogsContainer">
+                    <div class="log-item info">Automation started successfully</div>
+                </div>
             </div>
         </div>
     </div>

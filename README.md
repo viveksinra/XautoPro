@@ -1,26 +1,67 @@
-# 🐦❤️ Twitter Auto Liker Pro
+# 🐦❤️ Twitter Auto Liker Pro - Enhanced Multi-Mode Automation
 
-A powerful Chrome extension that automatically likes replies in your Twitter notifications with smart detection and customizable delays.
+A powerful Chrome extension that provides comprehensive Twitter/X automation with three specialized modes: Notifications, Home Feed, and Single Post automation.
 
-## ✨ Features
+## ✨ Features Overview
 
-### 🎯 Core Features
-- **Auto Like Notifications**: Automatically like replies in your Twitter notifications
-- **Smart Detection**: Prevents unliking already liked tweets
-- **Auto Scroll**: Automatically scroll through notifications to find new content
-- **Random Delays**: Configurable random delays between likes (2-10 seconds default)
-- **Real-time Statistics**: Track total likes and session likes
-- **Beautiful UI**: Modern, responsive interface with smooth animations
+### 🎯 Three Automation Modes
+- **📔 Notifications Mode**: Auto-like replies and mentions in notifications
+- **🏠 Home Feed Mode**: Auto-like, retweet, and bookmark posts in your timeline
+- **💬 Single Post Mode**: Auto-like comments and replies in specific post threads
 
-### 🛡️ Safety Features
-- **Duplicate Prevention**: Won't like the same tweet twice
-- **Already Liked Detection**: Multiple methods to detect already liked tweets
-- **Human-like Behavior**: Random delays and smooth scrolling to avoid detection
-- **Easy Stop/Start**: Quick controls to start and stop the automation
+### 🛡️ Advanced Safety Features
+- **Smart Detection**: Multiple algorithms to prevent double-actions
+- **Human-like Behavior**: Random delays and realistic mouse movements
+- **URL-based Navigation**: One-click navigation to correct pages
+- **Page Detection**: Automatic detection of current page type
+- **Error Recovery**: Graceful handling of UI changes and errors
+
+## 🚀 Core Features by Mode
+
+### 📔 Notifications Mode (`https://x.com/notifications`)
+- ✅ **Auto Like Notifications**: Automatically like replies and mentions
+- ✅ **Auto Scroll Notifications**: Scroll through all notifications
+- ✅ **Wait for New Mode**: Stay at top and like new incoming notifications
+- ✅ **Smart Filtering**: Only process notification-context content
+
+### 🏠 Home Feed Mode (`https://x.com/home`)
+- ✅ **Auto Like Posts**: Automatically like posts in your timeline
+- ✅ **Auto Retweet**: Automatically retweet interesting content
+- ✅ **Auto Bookmark**: Save posts to bookmarks automatically
+- ✅ **Continuous Scrolling**: Endless feed automation
+- ✅ **Multi-Action Support**: Perform multiple actions per post
+
+### 💬 Single Post Mode (`https://x.com/*/status/*`)
+- ✅ **Auto Like Comments**: Like all comments and replies
+- ✅ **Auto Reply**: Open reply dialogs for engagement
+- ✅ **Like Original Post**: Automatically like the main post
+- ✅ **Comment Scrolling**: Scroll through all comments
+- ✅ **Thread Navigation**: Handle nested comment threads
+
+## 🎨 Enhanced User Interface
+
+### 🔄 Tab-Based Navigation
+- **Modern Design**: Beautiful tab interface with smooth animations
+- **Context-Aware**: Different options based on current page
+- **Visual Indicators**: Real-time status and page detection
+- **One-Click Navigation**: Direct links to Twitter pages
+
+### ⚙️ Advanced Settings
+- **Min/Max Delays**: Customizable action delays (1-60 seconds)
+- **Scroll Timing**: Configurable scroll delays (1-30 seconds)
+- **Action Delays**: Fine-tune interaction timing (100-2000ms)
+- **Real-time Validation**: Automatic settings validation
+
+### 📊 Comprehensive Statistics
+- **Total Likes**: All-time like count across all modes
+- **Session Likes**: Current session statistics
+- **Retweets**: Total retweet count
+- **Bookmarks**: Total bookmark count
+- **Reset Option**: Clear all statistics
 
 ## 🚀 Installation
 
-### Method 1: Load Unpacked Extension (Recommended for Development)
+### Method 1: Load Unpacked Extension (Recommended)
 
 1. **Download/Clone the Extension**
    ```bash
@@ -29,23 +70,25 @@ A powerful Chrome extension that automatically likes replies in your Twitter not
    ```
 
 2. **Create Icon Files**
-   You need to convert the SVG icon to PNG files. You can:
-   - Use an online SVG to PNG converter
-   - Use ImageMagick: `convert icon.svg -resize 16x16 icon16.png`
-   - Use any graphics editor like GIMP, Photoshop, or Figma
-
-   Required icon files:
-   - `icons/icon16.png` (16x16 pixels)
-   - `icons/icon32.png` (32x32 pixels)
-   - `icons/icon48.png` (48x48 pixels)
-   - `icons/icon128.png` (128x128 pixels)
+   Convert the SVG icon to PNG files:
+   ```bash
+   # Using ImageMagick (if available)
+   convert icons/icon.svg -resize 16x16 icons/icon16.png
+   convert icons/icon.svg -resize 32x32 icons/icon32.png
+   convert icons/icon.svg -resize 48x48 icons/icon48.png
+   convert icons/icon.svg -resize 128x128 icons/icon128.png
+   ```
+   
+   Or use online converters like:
+   - [CloudConvert](https://cloudconvert.com/svg-to-png)
+   - [Convertio](https://convertio.co/svg-png/)
+   - Any graphics editor (GIMP, Photoshop, Figma)
 
 3. **Load Extension in Chrome**
    - Open Chrome and navigate to `chrome://extensions/`
    - Enable "Developer mode" (toggle in top right)
    - Click "Load unpacked"
    - Select the extension folder
-   - The extension should now appear in your extensions list
 
 4. **Pin the Extension**
    - Click the extensions puzzle icon in Chrome toolbar
@@ -55,51 +98,63 @@ A powerful Chrome extension that automatically likes replies in your Twitter not
 
 ### Initial Setup
 
-1. **Navigate to Twitter**
-   - Go to [twitter.com](https://twitter.com) or [x.com](https://x.com)
-   - Make sure you're logged in
+1. **Navigate to Twitter/X**
+   - Go to [x.com](https://x.com) and log in
+   - The extension works on both twitter.com and x.com
 
-2. **Open Notifications**
-   - Click on the "Notifications" tab in Twitter
-   - This is where the extension will work
+2. **Choose Your Mode**
+   - Click the extension icon to open the popup
+   - Select the appropriate tab:
+     - **Notifications**: For notification automation
+     - **Home Feed**: For timeline automation  
+     - **Single Post**: For comment thread automation
 
-3. **Configure Settings**
-   - Click the extension icon in Chrome toolbar
-   - Configure your preferences:
-     - **Auto Like**: Enable/disable automatic liking
-     - **Auto Scroll**: Enable/disable automatic scrolling
-     - **Min/Max Delay**: Set delay range (default: 2-10 seconds)
+3. **Navigate to Correct Page**
+   - Use the "Go to..." buttons for automatic navigation
+   - Or manually navigate to the desired page
 
-### Using the Extension
+### Mode-Specific Usage
 
-1. **Start Auto Liking**
-   - Ensure you're on the Twitter notifications page
-   - Enable "Auto Like" and/or "Auto Scroll" toggles
-   - Click "Start Auto Liking"
-   - Watch the activity log for real-time updates
+#### 📔 Notifications Mode
+1. Click "📔 Go to Notifications" or navigate to `/notifications`
+2. Enable desired features:
+   - **Auto Like**: Like all notification replies
+   - **Auto Scroll**: Scroll through all notifications
+   - **Wait for New**: Stay at top for new notifications
+3. Click "▶️ Start Automation"
 
-2. **Monitor Activity**
-   - The extension popup shows:
-     - Current status (Ready/Active)
-     - Statistics (Total likes, Session likes)
-     - Real-time activity log
-     - Next action countdown
+#### 🏠 Home Feed Mode
+1. Click "🏠 Go to Home Feed" or navigate to `/home`
+2. Enable desired features:
+   - **Auto Like**: Like posts in timeline
+   - **Auto Retweet**: Retweet posts automatically
+   - **Auto Bookmark**: Save posts to bookmarks
+   - **Auto Scroll**: Continuous timeline scrolling
+3. Click "▶️ Start Automation"
 
-3. **Stop When Needed**
-   - Click "Stop" button to halt all automation
-   - Extension will finish current action and stop safely
+#### 💬 Single Post Mode
+1. Navigate to any tweet (URL like `/status/123456789`)
+2. The extension will automatically detect the page
+3. Enable desired features:
+   - **Auto Like Comments**: Like all comments
+   - **Auto Reply**: Open reply dialogs
+   - **Auto Scroll**: Scroll through comments
+   - **Like Original**: Like the main post
+4. Click "▶️ Start Automation"
 
-## ⚙️ Settings
+## ⚙️ Advanced Configuration
 
-### Delay Configuration
-- **Min Delay**: Minimum time between actions (1-60 seconds)
-- **Max Delay**: Maximum time between actions (1-60 seconds)
-- **Random Range**: Extension picks random delay within your range
+### Delay Settings
+- **Min Delay (1-60s)**: Minimum time between actions
+- **Max Delay (1-60s)**: Maximum time between actions
+- **Scroll Delay (1-30s)**: Time between scroll actions
+- **Action Delay (100-2000ms)**: Delay for click animations
 
-### Safety Features
-- Extension validates min ≤ max delays automatically
-- Prevents operation on non-Twitter sites
-- Smart detection of already liked content
+### Safety Recommendations
+- **Use realistic delays**: 2-10 seconds minimum
+- **Take breaks**: Don't run 24/7
+- **Monitor your account**: Watch for any restrictions
+- **Start slow**: Begin with conservative settings
 
 ## 📊 Statistics
 
