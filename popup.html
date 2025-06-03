@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Auto Liker Pro</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+                </svg>
+                <h1>Twitter Auto Liker Pro</h1>
+            </div>
+        </header>
+
+        <div class="status-section">
+            <div class="status-indicator" id="statusIndicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Ready</span>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <div class="feature-card">
+                <h3>Auto Like Notifications</h3>
+                <p class="feature-description">Automatically like replies in your notifications</p>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="autoLikeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Enable Auto Like</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h3>Auto Scroll Through Notifications</h3>
+                <p class="feature-description">Scroll down through existing notifications to find content</p>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="autoScrollToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Enable Auto Scroll</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h3>Wait for New Notifications</h3>
+                <p class="feature-description">Stay at top and automatically like new incoming replies</p>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="waitForNewToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">Enable Wait Mode</span>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>Delay Settings</h3>
+                <div class="delay-inputs">
+                    <div class="input-group">
+                        <label for="minDelay">Min Delay (seconds)</label>
+                        <input type="number" id="minDelay" min="1" max="60" value="2">
+                    </div>
+                    <div class="input-group">
+                        <label for="maxDelay">Max Delay (seconds)</label>
+                        <input type="number" id="maxDelay" min="1" max="60" value="10">
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <h3>Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalLikes">0</span>
+                        <span class="stat-label">Total Likes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="sessionLikes">0</span>
+                        <span class="stat-label">Session Likes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="startBtn">Start Auto Liking</button>
+            <button class="btn btn-secondary" id="stopBtn" disabled>Stop</button>
+            <button class="btn btn-tertiary" id="resetStatsBtn">Reset Stats</button>
+        </div>
+
+        <div class="logs-section">
+            <h3>Activity Log</h3>
+            <div class="logs-container" id="logsContainer">
+                <div class="log-item info">Extension loaded successfully</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 

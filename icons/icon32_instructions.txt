@@ -1,0 +1,21 @@
+
+Icon Placeholder Instructions
+============================
+
+To create the actual icon32.png file:
+
+1. Use an online SVG to PNG converter:
+   - Upload icons/icon.svg
+   - Set output size to 32x32 pixels
+   - Download as icon32.png
+
+2. Or use ImageMagick command line:
+   convert icons/icon.svg -resize 32x32 icons/icon32.png
+
+3. Or use any graphics editor:
+   - Open icons/icon.svg in GIMP, Photoshop, Figma, etc.
+   - Resize to 32x32 pixels
+   - Export as PNG
+   - Save as icons/icon32.png
+
+Replace this placeholder file with the actual PNG icon.

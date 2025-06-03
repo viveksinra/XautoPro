@@ -1,0 +1,21 @@
+
+Icon Placeholder Instructions
+============================
+
+To create the actual icon48.png file:
+
+1. Use an online SVG to PNG converter:
+   - Upload icons/icon.svg
+   - Set output size to 48x48 pixels
+   - Download as icon48.png
+
+2. Or use ImageMagick command line:
+   convert icons/icon.svg -resize 48x48 icons/icon48.png
+
+3. Or use any graphics editor:
+   - Open icons/icon.svg in GIMP, Photoshop, Figma, etc.
+   - Resize to 48x48 pixels
+   - Export as PNG
+   - Save as icons/icon48.png
+
+Replace this placeholder file with the actual PNG icon.
